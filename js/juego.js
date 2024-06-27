@@ -602,29 +602,52 @@ function keyPressed() {
 }
 
 function mousePressed() {
-    if (!gameStarted && mouseX > width / 2 - 100 && mouseX < width / 2 + 100 &&
-        mouseY > height / 2 - 40 && mouseY < height / 2 + 40 && !instrucciones) {
-        clickEffect.play();
-        if (!gameOver) {
-            gameStarted = true;
+    if (window.innerWidth < 1200) {
+        if (!gameStarted && mouseX > 176.25 && mouseX < 302 &&
+            mouseY > 156 && mouseY < 206 && !instrucciones) {
+            clickEffect.play();
+            if (!gameOver) {
+                gameStarted = true;
+            }
+            gameOver = false;
+            initializeGame();
         }
-        gameOver = false;
-        initializeGame();
+        if (!gameStarted && mouseX > 176.25 && mouseX < 302 &&
+            mouseY >210 && mouseY < 256) {
+            clickEffect.play();
+            instrucciones = !instrucciones;
+        }
     }
-    if (!gameStarted && mouseX > width / 2 - 100 && mouseX < width / 2 + 100 &&
-        mouseY > height / 2 + 50 && mouseY < height / 2 + 130) {
-        clickEffect.play();
-        instrucciones = !instrucciones;
+    else {
+        if (!gameStarted && mouseX > width / 2 - 100 && mouseX < width / 2 + 100 &&
+            mouseY > height / 2 - 40 && mouseY < height / 2 + 40 && !instrucciones) {
+            clickEffect.play();
+            if (!gameOver) {
+                gameStarted = true;
+            }
+            gameOver = false;
+            initializeGame();
+        }
+        if (!gameStarted && mouseX > width / 2 - 100 && mouseX < width / 2 + 100 &&
+            mouseY > height / 2 + 50 && mouseY < height / 2 + 130) {
+            clickEffect.play();
+            instrucciones = !instrucciones;
+        }
     }
+
 }
 
 function mouseClicked() {
+
+    console.log("X:" + mouseX, "Y:" + mouseY)
     if (gameStarted) {
-        if (mouseX > width / 2) {
+        if (mouseX > width / 2 && mouseX < width - 150) {
             dinosaur.jump();
-        } else if (mouseX < width / 2) {
+            jumpEffect.play();
+        } else if (mouseX < 0 && mouseX > -150) {
             activatedTeleport = true;
-        } else if (mouseX < width / 2 && mouseX > width / 2) {
+            teleportEffect.play();
+        } else if (mouseX > 150 && mouseX < width - 150) {
             dinosaur.activateShield();
         }
     }
