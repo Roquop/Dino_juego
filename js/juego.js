@@ -1,3 +1,27 @@
+document.addEventListener("DOMContentLoaded", function () {
+    var fullscreenButton = document.getElementById("fullscreenButton");
+
+    fullscreenButton.addEventListener("click", function () {
+        var elem = document.documentElement;
+
+        if (!document.fullscreenElement && !document.mozFullScreenElement &&
+            !document.webkitFullscreenElement && !document.msFullscreenElement) {
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.msRequestFullscreen) {
+                elem.msRequestFullscreen();
+            } else if (elem.mozRequestFullScreen) {
+                elem.mozRequestFullScreen();
+            } else if (elem.webkitRequestFullscreen) {
+                elem.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+            }
+        }
+        fullscreenButton.classList.add("hidden")
+
+    });
+
+});
+
 let minim;
 let forestMusic, desertMusic, snowMusic, lavaPitMusic, heavenMusic, spaceMusic, blackHoleMusic, startMusic, gameOverMusic;
 let jumpEffect, liveEffect, crashEffect, eggEffect, clickEffect, speedEffect, shieldEffect;
@@ -585,13 +609,12 @@ function mousePressed() {
 }
 
 function mouseClicked() {
-    if (gameStarted){
-
+    if (gameStarted) {
         if (mouseX > width / 2) {
             dinosaur.jump();
         } else if (mouseX < width / 2) {
             activatedTeleport = true;
-        } else if (mouseX < width / 2 && mouseX >width/2){
+        } else if (mouseX < width / 2 && mouseX > width / 2) {
             dinosaur.activateShield();
         }
     }
