@@ -20,12 +20,6 @@ document.addEventListener("DOMContentLoaded", function () {
         fullscreenButton.classList.add("hidden")
     });
 
-    if (window.innerWidth > 1200) {
-        fullscreenButton.classList.add("hidden");
-        comandos[0].classList.add("hidden");
-        comandos[1].classList.add("hidden");
-
-    }
 
 });
 let minim;
@@ -374,6 +368,15 @@ class Environment {
 }
 
 function Game() {
+    if (gameStarted){
+        if (window.innerWidth < 1200) {
+            fullscreenButton.classList.remove("hidden");
+            comandos[0].classList.remove("hidden");
+            comandos[1].classList.remove("hidden");
+            comandos[2].classList.remove("hidden");
+
+        }
+    }
     background(0);
     environment.update();
     dinosaur.update();
@@ -638,8 +641,7 @@ function mousePressed() {
 }
 
 function mouseClicked() {
-
-    console.log("X:" + mouseX, "Y:" + mouseY)
+    console.log(mouseX,mouseY);
     if (gameStarted) {
         if (mouseX > width / 2 && mouseX < width - 150) {
             dinosaur.jump();
@@ -647,7 +649,7 @@ function mouseClicked() {
         } else if (mouseX < 0 && mouseX > -150) {
             activatedTeleport = true;
             teleportEffect.play();
-        } else if (mouseX > 150 && mouseX < width - 150) {
+        } else if (mouseX > 131 && mouseX < 335 && mouseY > 262 && mouseY < 314) {
             dinosaur.activateShield();
         }
     }

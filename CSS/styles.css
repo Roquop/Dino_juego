@@ -37,10 +37,11 @@ button {
   position: absolute;
   writing-mode: horizontal-tb; /* vertical-rl para texto vertical de derecha a izquierda */
   align-self: stretch;
-  width: 50%;
+  width: 25%;
   height: 50px;
-  bottom: 0px;
-  left:25%;
+  bottom: 50px;
+  left:37%;
+  border: 3px solid blue;
 }
 .comando {
     opacity: 50%;
@@ -49,4 +50,5 @@ button {
   width: 20%;
   z-index: 2;
   background-color: white;
+  border: none;
 }
