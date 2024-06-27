@@ -1,5 +1,6 @@
+var fullscreenButton = document.getElementById("fullscreenButton");
+
 document.addEventListener("DOMContentLoaded", function () {
-    var fullscreenButton = document.getElementById("fullscreenButton");
 
     fullscreenButton.addEventListener("click", function () {
         var elem = document.documentElement;
@@ -17,11 +18,12 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
         fullscreenButton.classList.add("hidden")
-
     });
-
+    
+if (window.innerWidth>1200){
+    fullscreenButton.classList.add("hidden")
+}
 });
-
 let minim;
 let forestMusic, desertMusic, snowMusic, lavaPitMusic, heavenMusic, spaceMusic, blackHoleMusic, startMusic, gameOverMusic;
 let jumpEffect, liveEffect, crashEffect, eggEffect, clickEffect, speedEffect, shieldEffect;
