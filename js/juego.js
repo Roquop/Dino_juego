@@ -1,5 +1,5 @@
-var fullscreenButton = document.getElementById("fullscreenButton");
-
+let fullscreenButton = document.getElementById("fullscreenButton");
+let comandos = document.getElementsByClassName("comando");
 document.addEventListener("DOMContentLoaded", function () {
 
     fullscreenButton.addEventListener("click", function () {
@@ -19,10 +19,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         fullscreenButton.classList.add("hidden")
     });
-    
-if (window.innerWidth>1200){
-    fullscreenButton.classList.add("hidden")
-}
+
+    if (window.innerWidth > 1200) {
+        fullscreenButton.classList.add("hidden");
+        comandos[0].classList.add("hidden");
+        comandos[1].classList.add("hidden");
+
+    }
+
 });
 let minim;
 let forestMusic, desertMusic, snowMusic, lavaPitMusic, heavenMusic, spaceMusic, blackHoleMusic, startMusic, gameOverMusic;
@@ -114,6 +118,10 @@ function preload() {
 
 function setup() {
     createCanvas(800, 600);
+    if (window.innerWidth < 1200) {
+        let canvas = document.getElementById("defaultCanvas0");
+        canvas.classList.add("canvas_movil")
+    };
     dinosaur = new Dinosaur();
     environment = new Environment();
     initializeGame();
