@@ -370,10 +370,9 @@ class Environment {
 function Game() {
     if (gameStarted){
         if (window.innerWidth < 1200) {
-            fullscreenButton.classList.remove("hidden");
-            comandos[0].classList.remove("hidden");
-            comandos[1].classList.remove("hidden");
-            comandos[2].classList.remove("hidden");
+            comandos[0].classList.add("flex");
+            comandos[1].classList.add("flex");
+            comandos[2].classList.add("flex");
 
         }
     }

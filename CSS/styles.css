@@ -43,7 +43,12 @@ button {
   left:37%;
   border: 3px solid blue;
 }
+.flex{
+    display: flex;
+}
 .comando {
+    align-items: center;
+    justify-content: center;
     opacity: 50%;
   pointer-events: none;
   writing-mode: vertical-rl; /* vertical-rl para texto vertical de derecha a izquierda */
