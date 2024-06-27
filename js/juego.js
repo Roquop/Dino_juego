@@ -506,7 +506,7 @@ function verInstrucciones() {
     push();
     textSize(24);
     textAlign(LEFT, TOP);
-    text("En este juego deberas conseguir aguantar vivo el mayor numero de tiempo sin caerte y sin tropezar con los obstaculos \n\n  · Pulsa espacio para saltar \n  · Pulsa q para dar un aceleron todas las veces que quieras!\n  · Pulsa w para un escudo que te protegera de los obstaculos durante 3 segundos \n\nCada vez que consigas 10 huevos ganaras una vida!", 40, 50, width - 40, 400);
+    text("En este juego deberas conseguir aguantar vivo el mayor numero de tiempo sin caerte y sin tropezar con los obstaculos \n\n  · Pulsa espacio o SALTAR para saltar \n  · Pulsa q o SPRINTpara dar un aceleron todas las veces que quieras!\n  · Pulsa w o ESCUDO para un escudo que te protegera de los obstaculos durante 3 segundos \n\nCada vez que consigas 10 huevos ganaras una vida!", 40, 50, width - 40, 400);
     textAlign(CENTER);
     textSize(32);
     rectMode(CENTER);
@@ -608,6 +608,25 @@ function keyPressed() {
 }
 
 function mousePressed() {
+
+        if (!gameStarted && mouseX > width / 2 - 100 && mouseX < width / 2 + 100 &&
+            mouseY > height / 2 - 40 && mouseY < height / 2 + 40 && !instrucciones) {
+            clickEffect.play();
+            if (!gameOver) {
+                gameStarted = true;
+            }
+            gameOver = false;
+            initializeGame();
+        }
+        if (!gameStarted && mouseX > width / 2 - 100 && mouseX < width / 2 + 100 &&
+            mouseY > height / 2 + 50 && mouseY < height / 2 + 130) {
+            clickEffect.play();
+            instrucciones = !instrucciones;
+        }
+
+}
+
+function mouseClicked() {
     if (window.innerWidth < 1200) {
         if (!gameStarted && mouseX > 176.25 && mouseX < 302 &&
             mouseY > 156 && mouseY < 206 && !instrucciones) {
@@ -624,26 +643,6 @@ function mousePressed() {
             instrucciones = !instrucciones;
         }
     }
-    else {
-        if (!gameStarted && mouseX > width / 2 - 100 && mouseX < width / 2 + 100 &&
-            mouseY > height / 2 - 40 && mouseY < height / 2 + 40 && !instrucciones) {
-            clickEffect.play();
-            if (!gameOver) {
-                gameStarted = true;
-            }
-            gameOver = false;
-            initializeGame();
-        }
-        if (!gameStarted && mouseX > width / 2 - 100 && mouseX < width / 2 + 100 &&
-            mouseY > height / 2 + 50 && mouseY < height / 2 + 130) {
-            clickEffect.play();
-            instrucciones = !instrucciones;
-        }
-    }
-
-}
-
-function mouseClicked() {
     console.log(mouseX, mouseY);
     if (gameStarted) {
         if (mouseX > width / 2 && mouseX < width - 150) {
