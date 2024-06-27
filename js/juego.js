@@ -374,10 +374,6 @@ function Game() {
             comandos[1].classList.add("flex");
             comandos[2].classList.add("flex");
         }
-    } else {
-        comandos[0].classList.remove("flex");
-        comandos[1].classList.remove("flex");
-        comandos[2].classList.remove("flex");
     }
     background(0);
     environment.update();
@@ -567,6 +563,11 @@ class Platform {
     if (highScore < score) {
         highScore = score;
     }
+    if (!gameStarted) {
+        comandos[0].classList.remove("flex");
+        comandos[1].classList.remove("flex");
+        comandos[2].classList.remove("flex");
+    }
     push();
     image(game_over, 0, 0);
     textAlign(CENTER);
@@ -651,7 +652,7 @@ function mouseClicked() {
         } else if (mouseX < 0 && mouseX > -150) {
             activatedTeleport = true;
             teleportEffect.play();
-        } else if (mouseX > 131 && mouseX < 335 && mouseY > 262 && mouseY < 314) {
+        } else if (mouseX > 133 && mouseX < 335 && mouseY > 313 && mouseY < 360) {
             dinosaur.activateShield();
         }
     }
