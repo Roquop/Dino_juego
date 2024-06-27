@@ -368,13 +368,16 @@ class Environment {
 }
 
 function Game() {
-    if (gameStarted){
+    if (gameStarted) {
         if (window.innerWidth < 1200) {
             comandos[0].classList.add("flex");
             comandos[1].classList.add("flex");
             comandos[2].classList.add("flex");
-
         }
+    } else {
+        comandos[0].classList.remove("flex");
+        comandos[1].classList.remove("flex");
+        comandos[2].classList.remove("flex");
     }
     background(0);
     environment.update();
@@ -615,7 +618,7 @@ function mousePressed() {
             initializeGame();
         }
         if (!gameStarted && mouseX > 176.25 && mouseX < 302 &&
-            mouseY >210 && mouseY < 256) {
+            mouseY > 210 && mouseY < 256) {
             clickEffect.play();
             instrucciones = !instrucciones;
         }
@@ -640,7 +643,7 @@ function mousePressed() {
 }
 
 function mouseClicked() {
-    console.log(mouseX,mouseY);
+    console.log(mouseX, mouseY);
     if (gameStarted) {
         if (mouseX > width / 2 && mouseX < width - 150) {
             dinosaur.jump();
