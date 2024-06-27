@@ -37,53 +37,53 @@
 
         function preload() {
             // Load images
-            forestImg = loadImage("./../assets/forestImg.jpeg");
-            desertImg = loadImage("./../assets/desertImg.jpeg");
-            snowImg = loadImage("./../assets/snowImg.jpeg");
-            lavaPitImg = loadImage("./../assets/lavaPitImg.jpeg");
-            heavenImg = loadImage("./../assets/heavenImg.jpeg");
-            spaceImg = loadImage("./../assets/spaceImg.jpeg");
-            blackHoleImg = loadImage("./../assets/blackHoleImg.jpeg");
-            fondo_inicio = loadImage("./../assets/fondo_inicio.png");
-            game_over = loadImage("./../assets/game_over.png");
-            forestPlatform = loadImage("./../assets/forestPlatform.png");
-            desertPlatform = loadImage("./../assets/desertPlatform.png");
-            snowPlatform = loadImage("./../assets/snowPlatform.png");
-            lavaPlatform = loadImage("./../assets/lavaPlatform.png");
-            heavenPlatform = loadImage("./../assets/heavenPlatform.png");
-            spacePlatform = loadImage("./../assets/spacePlatform.png");
-            dinosaurImg1 = loadImage("./../assets/dinosaurImage1.png");
-            dinosaurImg2 = loadImage("./../assets/dinosaurImage2.png");
-            dinosaurJumpImg = loadImage("./../assets/dinosaurJump.png");
-            obstacleImg = loadImage("./../assets/meteor.png");
-            collectibleImg = loadImage("./../assets/egg.png");
-            puntos = loadImage("./../assets/puntos.png");
-            vida_escudo = loadImage("./../assets/vida_escudo.png");
-            vidasImg = loadImage("./../assets/vidas.png");
-            eggImg = loadImage("./../assets/egg.png");
-            shieldImg = loadImage("./../assets/shieldPixelArt.png");
+            forestImg = loadImage("./assets/forestImg.jpeg");
+            desertImg = loadImage("./assets/desertImg.jpeg");
+            snowImg = loadImage("./assets/snowImg.jpeg");
+            lavaPitImg = loadImage("./assets/lavaPitImg.jpeg");
+            heavenImg = loadImage("./assets/heavenImg.jpeg");
+            spaceImg = loadImage("./assets/spaceImg.jpeg");
+            blackHoleImg = loadImage("./assets/blackHoleImg.jpeg");
+            fondo_inicio = loadImage("./assets/fondo_inicio.png");
+            game_over = loadImage("./assets/game_over.png");
+            forestPlatform = loadImage("./assets/forestPlatform.png");
+            desertPlatform = loadImage("./assets/desertPlatform.png");
+            snowPlatform = loadImage("./assets/snowPlatform.png");
+            lavaPlatform = loadImage("./assets/lavaPlatform.png");
+            heavenPlatform = loadImage("./assets/heavenPlatform.png");
+            spacePlatform = loadImage("./assets/spacePlatform.png");
+            dinosaurImg1 = loadImage("./assets/dinosaurImage1.png");
+            dinosaurImg2 = loadImage("./assets/dinosaurImage2.png");
+            dinosaurJumpImg = loadImage("./assets/dinosaurJump.png");
+            obstacleImg = loadImage("./assets/meteor.png");
+            collectibleImg = loadImage("./assets/egg.png");
+            puntos = loadImage("./assets/puntos.png");
+            vida_escudo = loadImage("./assets/vida_escudo.png");
+            vidasImg = loadImage("./assets/vidas.png");
+            eggImg = loadImage("./assets/egg.png");
+            shieldImg = loadImage("./assets/shieldPixelArt.png");
 
             // Load font
-            pixelFont = loadFont("./../assets/arcadeclassic.regular.ttf");
+            pixelFont = loadFont("./assets/arcadeclassic.regular.ttf");
 
             // Load sounds
             soundFormats('mp3');
-            forestMusic = loadSound("./../assets/forest.mp3");
-            desertMusic = loadSound("./../assets/desert.mp3");
-            snowMusic = loadSound("./../assets/snow.mp3");
-            lavaPitMusic = loadSound("./../assets/lava_pit.mp3");
-            heavenMusic = loadSound("./../assets/heaven.mp3");
-            spaceMusic = loadSound("./../assets/space.mp3");
-            blackHoleMusic = loadSound("./../assets/black_hole.mp3");
-            startMusic = loadSound("./../assets/inicio.mp3");
-            gameOverMusic = loadSound("./../assets/game_over.mp3");
-            liveEffect = loadSound("./../assets/one_live.mp3");
-            jumpEffect = loadSound("./../assets/jump.mp3");
-            crashEffect = loadSound("./../assets/crash.mp3");
-            eggEffect = loadSound("./../assets/egg_sound.mp3");
-            clickEffect = loadSound("./../assets/click.mp3");
-            speedEffect = loadSound("./../assets/speed.mp3");
-            shieldEffect = loadSound("./../assets/shield.mp3");
+            forestMusic = loadSound("./assets/forest.mp3");
+            desertMusic = loadSound("./assets/desert.mp3");
+            snowMusic = loadSound("./assets/snow.mp3");
+            lavaPitMusic = loadSound("./assets/lava_pit.mp3");
+            heavenMusic = loadSound("./assets/heaven.mp3");
+            spaceMusic = loadSound("./assets/space.mp3");
+            blackHoleMusic = loadSound("./assets/black_hole.mp3");
+            startMusic = loadSound("./assets/inicio.mp3");
+            gameOverMusic = loadSound("./assets/game_over.mp3");
+            liveEffect = loadSound("./assets/one_live.mp3");
+            jumpEffect = loadSound("./assets/jump.mp3");
+            crashEffect = loadSound("./assets/crash.mp3");
+            eggEffect = loadSound("./assets/egg_sound.mp3");
+            clickEffect = loadSound("./assets/click.mp3");
+            speedEffect = loadSound("./assets/speed.mp3");
+            shieldEffect = loadSound("./assets/shield.mp3");
         }
 
         function setup() {
